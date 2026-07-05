@@ -1,0 +1,73 @@
+{
+  "info": {
+    "name": "Weather Monitoring Service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Add City",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"city\": \"Mumbai\",\n  \"latitude\": 19.076,\n  \"longitude\": 72.8777\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/cities",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "cities"
+          ]
+        }
+      }
+    },
+    {
+      "name": "List Cities",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/cities",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "cities"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Weather History",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/cities/Mumbai/history",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "cities",
+            "Mumbai",
+            "history"
+          ]
+        }
+      }
+    }
+  ]
+}

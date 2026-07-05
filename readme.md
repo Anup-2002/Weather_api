@@ -11,7 +11,29 @@ FastAPI service that stores configured cities and saves their current weather at
 - Redis
 - SQLite
 - Open-Meteo API
+## Configuration
 
+Create a `.env` file in the project root and add the following environment variables:
+
+```env
+DATABASE_URL=sqlite:///./weather.db
+REDIS_URL=redis://localhost:6379/0
+CELERY_BROKER_URL=redis://localhost:6379/0
+CELERY_RESULT_BACKEND=redis://localhost:6379/1
+OPEN_METEO_URL=https://api.open-meteo.com/v1/forecast
+FETCH_INTERVAL_SECONDS=60
+```
+
+### Environment Variables
+
+| Variable | Description |
+|----------|-------------|
+| `DATABASE_URL` | Database connection URL (SQLite by default). |
+| `REDIS_URL` | Redis server URL. |
+| `CELERY_BROKER_URL` | Celery broker URL. |
+| `CELERY_RESULT_BACKEND` | Celery result backend URL. |
+| `OPEN_METEO_URL` | Open-Meteo API endpoint. |
+| `FETCH_INTERVAL_SECONDS` | Interval (in seconds) for fetching weather data. |
 ## Project Setup
 
 Create and activate a virtual environment:

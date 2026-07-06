@@ -70,7 +70,7 @@ docker run --name weather-redis -p 6379:6379 redis:7
 ## Run FastAPI
 
 ```bash
-uvicorn app.main:app --reload
+uvicorn main:app --reload
 ```
 
 Open the API docs:
